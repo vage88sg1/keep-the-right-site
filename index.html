@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Keep The Right — Quiz di Cultura Generale | Dimostra che lo sai!</title>
+<meta name="description" content="Keep The Right è il quiz di cultura generale con sfide online 1 vs 1: oltre 2.000 domande in 6 categorie, Arena competitiva e allenamento offline. Gratis su Google Play.">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="assets/favicon-192.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Keep The Right — Dimostra che lo sai!">
+<meta property="og:description" content="Il quiz di cultura generale con duelli 1 vs 1 nell'Arena. Oltre 2.000 domande, 6 categorie, round sempre diversi. Gratis su Google Play.">
+<meta property="og:image" content="https://vage88sg1.github.io/keep-the-right-site/assets/og.jpg">
+<meta property="og:url" content="https://vage88sg1.github.io/keep-the-right-site/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#070d1e">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#070d1e; --bg2:#0e1a38; --card:#101d3d;
+    --ink:#f4f7ff; --mut:#9db0d6; --line:rgba(150,180,240,.16);
+    --gold:#f4b93b; --blue:#3f8ae0; --purple:#a06be6;
+    --green:#57b84a; --red:#e24b4a; --orange:#e08a2e;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:"Helvetica Neue",Arial,system-ui,sans-serif;
+    background:var(--bg); color:var(--ink); line-height:1.6;
+    overflow-x:hidden;
+  }
+  h1,h2,h3,.disp{font-family:"Baloo 2","Arial Black",sans-serif;line-height:1.15}
+  #stars{position:fixed;inset:0;z-index:-2;pointer-events:none}
+  .glow{position:fixed;inset:0;z-index:-1;pointer-events:none;
+    background:radial-gradient(90% 55% at 50% -8%, rgba(34,66,128,.55) 0%, rgba(12,23,48,.25) 55%, transparent 100%)}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 22px}
+
+  header{position:sticky;top:0;z-index:50;backdrop-filter:blur(10px);
+    background:rgba(7,13,30,.72);border-bottom:1px solid var(--line)}
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:12px 0}
+  .nav .brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink)}
+  .nav .brand img{height:36px;border-radius:9px}
+  .nav .brand span{font-family:"Baloo 2",sans-serif;font-weight:800;font-size:18px;letter-spacing:.02em}
+  .nav a.cta{font-family:"Baloo 2",sans-serif;font-weight:700;font-size:15px;color:#071022;
+    background:var(--gold);padding:9px 18px;border-radius:11px;text-decoration:none;
+    transition:transform .12s ease}
+  .nav a.cta:hover{transform:translateY(-2px)}
+
+  .hero{padding:64px 0 30px;text-align:center}
+  .hero img.logo{width:min(480px,82vw);height:auto;filter:drop-shadow(0 18px 40px rgba(0,0,0,.5))}
+  .hero h1{font-size:clamp(38px,7vw,64px);font-weight:800;color:var(--gold);margin:18px 0 6px}
+  .hero p.sub{font-size:clamp(17px,2.6vw,21px);color:var(--mut);max-width:56ch;margin:0 auto}
+  .hero .store{margin-top:30px;display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap}
+  .hero .store img.badge{height:64px;transition:transform .12s ease}
+  .hero .store a:hover img.badge{transform:translateY(-2px)}
+  .soon{display:inline-block;font-size:13px;color:var(--gold);border:1px solid rgba(244,185,59,.45);
+    background:rgba(244,185,59,.1);padding:5px 14px;border-radius:999px}
+  .chips{margin-top:26px;display:flex;justify-content:center;gap:10px;flex-wrap:wrap}
+  .chip{font-family:"Baloo 2",sans-serif;font-weight:700;font-size:14px;padding:6px 16px;border-radius:999px;border:2px solid}
+  .chip.b{color:#8db8f0;border-color:rgba(63,138,224,.55)}
+  .chip.g{color:#8fd486;border-color:rgba(87,184,74,.55)}
+  .chip.p{color:#c9a2f2;border-color:rgba(160,107,230,.55)}
+
+  section{padding:72px 0}
+  .eyebrow{font-family:"Baloo 2",sans-serif;font-weight:700;font-size:13px;letter-spacing:.22em;
+    text-transform:uppercase;margin-bottom:8px}
+  h2{font-size:clamp(28px,4.4vw,40px);font-weight:800;margin-bottom:10px}
+  p.lead{color:var(--mut);font-size:17px;max-width:62ch}
+
+  .steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;margin-top:36px}
+  .step{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:26px 24px;
+    transition:transform .18s ease,border-color .18s ease}
+  .step:hover{transform:translateY(-4px);border-color:rgba(150,180,240,.4)}
+  .step .n{font-family:"Baloo 2",sans-serif;font-weight:800;font-size:15px;width:34px;height:34px;
+    display:flex;align-items:center;justify-content:center;border-radius:10px;margin-bottom:14px;color:#071022}
+  .step h3{font-size:20px;margin-bottom:6px}
+  .step p{color:var(--mut);font-size:15px}
+
+  .shot-hero{margin-top:40px;border-radius:20px;overflow:hidden;border:1px solid var(--line);
+    box-shadow:0 30px 70px rgba(0,0,0,.45)}
+  .shot-hero img{width:100%;display:block}
+
+  .cats{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin-top:36px}
+  .cats img{width:100%;border-radius:14px;display:block;transition:transform .18s ease}
+  .cats img:hover{transform:scale(1.03)}
+
+  .split{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:center;margin-top:8px}
+  @media(max-width:860px){.split{grid-template-columns:1fr}}
+  .split img{width:100%;border-radius:16px;border:1px solid var(--line);box-shadow:0 24px 60px rgba(0,0,0,.4)}
+  .feat{margin-top:20px;display:flex;flex-direction:column;gap:14px}
+  .feat li{list-style:none;display:flex;gap:12px;align-items:flex-start;color:var(--mut);font-size:16px}
+  .feat li b{color:var(--ink)}
+  .dot{flex:0 0 10px;width:10px;height:10px;border-radius:50%;margin-top:8px}
+
+  .video-box{margin-top:36px;position:relative;border-radius:20px;overflow:hidden;
+    border:1px solid var(--line);box-shadow:0 30px 70px rgba(0,0,0,.5);aspect-ratio:16/9}
+  .video-box iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+
+  .final{text-align:center;padding:90px 0 100px}
+  .final h2{font-size:clamp(32px,5.5vw,52px);color:var(--gold)}
+  .final p{color:var(--mut);font-size:18px;margin-top:6px}
+  .final .store{margin-top:30px;display:flex;justify-content:center}
+  .final img.badge{height:70px;transition:transform .12s ease}
+  .final a:hover img.badge{transform:translateY(-2px)}
+
+  footer{border-top:1px solid var(--line);padding:34px 0 44px;color:var(--mut);font-size:14px}
+  footer .cols{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+  footer a{color:#8db8f0;text-decoration:none}
+  footer a:hover{text-decoration:underline}
+  footer .legal{margin-top:18px;font-size:12px;color:#5f7099}
+
+  .reveal{opacity:0;transform:translateY(26px);transition:opacity .6s ease,transform .6s ease}
+  .reveal.in{opacity:1;transform:none}
+  @media (prefers-reduced-motion: reduce){
+    .reveal{opacity:1;transform:none;transition:none}
+    html{scroll-behavior:auto}
+  }
+</style>
+</head>
+<body>
+<canvas id="stars" aria-hidden="true"></canvas>
+<div class="glow" aria-hidden="true"></div>
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#top">
+      <img src="assets/favicon-192.png" alt="" width="36" height="36">
+      <span>Keep The Right</span>
+    </a>
+    <a class="cta" href="#scarica">Gioca gratis</a>
+  </div>
+</header>
+
+<main id="top">
+  <div class="wrap hero">
+    <img class="logo" src="assets/logo.webp" alt="Keep The Right" fetchpriority="high">
+    <h1>Dimostra che lo sai!</h1>
+    <p class="sub">Il quiz di cultura generale dove non basta sapere: devi scegliere la risposta
+    giusta prima che scada il tempo — e più in fretta dei tuoi avversari.</p>
+    <div class="store">
+      <a href="https://play.google.com/store/apps/details?id=com.vagesg1.ktr" rel="noopener">
+        <img class="badge" src="assets/google-play-badge.png" alt="Disponibile su Google Play">
+      </a>
+      <span class="soon">🚀 In fase di lancio</span>
+    </div>
+    <div class="chips">
+      <span class="chip g">2.000+ DOMANDE</span>
+      <span class="chip p">6 CATEGORIE</span>
+      <span class="chip b">ARENA 1 VS 1</span>
+    </div>
+  </div>
+
+  <section id="come-si-gioca">
+    <div class="wrap">
+      <p class="eyebrow" style="color:var(--blue)">Come si gioca</p>
+      <h2>Due carte. Una risposta giusta.</h2>
+      <p class="lead">Quale stato ha più popolazione? Quale film ha incassato di più? Quale
+      squadra ha vinto più titoli? Ogni round è una catena di confronti: tieni la risposta
+      giusta e accumula punti.</p>
+      <div class="steps">
+        <div class="step reveal"><div class="n" style="background:var(--blue)">1</div>
+          <h3>Leggi la domanda</h3><p>Ogni carta nasconde un valore: popolazione, incassi, velocità, titoli…</p></div>
+        <div class="step reveal"><div class="n" style="background:var(--gold)">2</div>
+          <h3>Tocca la carta giusta</h3><p>Hai pochi secondi: scegli prima che il timer arrivi a zero.</p></div>
+        <div class="step reveal"><div class="n" style="background:var(--green)">3</div>
+          <h3>Incatena le risposte</h3><p>20 confronti a round, combo di risposte esatte e punteggi da record.</p></div>
+      </div>
+      <div class="shot-hero reveal">
+        <img src="assets/shot_01_gameplay.jpg" alt="Un round di Keep The Right: quale stato ha la densità di popolazione maggiore?" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <section id="categorie">
+    <div class="wrap">
+      <p class="eyebrow" style="color:var(--purple)">6 categorie</p>
+      <h2>Cultura generale a 360°</h2>
+      <p class="lead">Round sempre diversi, mai a memoria: oltre 2.000 elementi da confrontare
+      tra paesi, personaggi, film, squadre, animali, opere ed eventi storici.</p>
+      <div class="cats">
+        <img class="reveal" src="assets/cat_geografia.jpg" alt="Categoria Geografia" loading="lazy">
+        <img class="reveal" src="assets/cat_storia.jpg" alt="Categoria Storia" loading="lazy">
+        <img class="reveal" src="assets/cat_scienze_natura.jpg" alt="Categoria Scienze e Natura" loading="lazy">
+        <img class="reveal" src="assets/cat_arte_letteratura.jpg" alt="Categoria Arte e Letteratura" loading="lazy">
+        <img class="reveal" src="assets/cat_divertimento.jpg" alt="Categoria Divertimento" loading="lazy">
+        <img class="reveal" src="assets/cat_sport_tempo_libero.jpg" alt="Categoria Sport e Tempo Libero" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <section id="arena">
+    <div class="wrap">
+      <div class="split">
+        <div>
+          <p class="eyebrow" style="color:var(--blue)">Arena</p>
+          <h2>Sfida altri giocatori, 1 contro 1</h2>
+          <ul class="feat">
+            <li class="reveal"><span class="dot" style="background:var(--blue)"></span>
+              <span><b>Duelli asincroni</b>: lancia la sfida, qualcuno la raccoglierà. Giochi quando vuoi tu.</span></li>
+            <li class="reveal"><span class="dot" style="background:var(--gold)"></span>
+              <span><b>Corsa a punti mensile</b>: ogni mese la classifica riparte da zero. Vinci le sfide e scala posizioni.</span></li>
+            <li class="reveal"><span class="dot" style="background:var(--green)"></span>
+              <span><b>Stesse carte, stesso tempo</b>: tu e il tuo avversario affrontate lo stesso round. Vince chi ne sa di più (e ha i nervi saldi).</span></li>
+          </ul>
+        </div>
+        <img class="reveal" src="assets/shot_02_arena.jpg" alt="L'Arena di Keep The Right: le tue sfide" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <section id="allenamento">
+    <div class="wrap">
+      <div class="split">
+        <img class="reveal" src="assets/shot_03_categorie.jpg" alt="La selezione delle categorie in Keep The Right" loading="lazy">
+        <div>
+          <p class="eyebrow" style="color:var(--purple)">Allenamento</p>
+          <h2>Allenati offline, quando vuoi</h2>
+          <ul class="feat">
+            <li class="reveal"><span class="dot" style="background:var(--purple)"></span>
+              <span><b>Specialista</b>: 3 round sul tuo argomento forte, per diventare imbattibile.</span></li>
+            <li class="reveal"><span class="dot" style="background:var(--purple)"></span>
+              <span><b>Saputello</b>: 6 round a sorpresa su tutte le categorie, cultura a 360°.</span></li>
+            <li class="reveal"><span class="dot" style="background:var(--gold)"></span>
+              <span><b>Niente connessione richiesta</b>: i tuoi record personali ti aspettano, anche in aereo.</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="video">
+    <div class="wrap">
+      <p class="eyebrow" style="color:var(--gold)">Guarda il gioco</p>
+      <h2>25 secondi per capire tutto</h2>
+      <div class="video-box reveal">
+        <iframe src="https://www.youtube-nocookie.com/embed/YPbTId7j_9s?rel=0"
+          title="Keep The Right — trailer" loading="lazy"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen></iframe>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap final" id="scarica">
+    <h2 class="disp">Dimostra che lo sai!</h2>
+    <p>Gratis, in italiano e in inglese. Ci vediamo nell'Arena.</p>
+    <div class="store">
+      <a href="https://play.google.com/store/apps/details?id=com.vagesg1.ktr" rel="noopener">
+        <img class="badge" src="assets/google-play-badge.png" alt="Disponibile su Google Play">
+      </a>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="cols">
+      <div>© 2026 Riccardo Vagelli — Keep The Right</div>
+      <div>
+        <a href="https://keep-the-right.web.app/privacy" rel="noopener">Privacy</a>
+        &nbsp;·&nbsp;
+        <a href="mailto:vage88.sg1@gmail.com">Contatti</a>
+      </div>
+    </div>
+    <p class="legal">Google Play e il logo di Google Play sono marchi di Google LLC.</p>
+  </div>
+</footer>
+
+<script>
+  // starfield
+  const cv=document.getElementById('stars'),ctx=cv.getContext('2d');
+  let stars=[];
+  function resize(){
+    cv.width=innerWidth*devicePixelRatio; cv.height=innerHeight*devicePixelRatio;
+    cv.style.width=innerWidth+'px'; cv.style.height=innerHeight+'px';
+    stars=Array.from({length:Math.min(140,innerWidth/6)},()=>({
+      x:Math.random()*cv.width, y:Math.random()*cv.height,
+      r:(Math.random()*1.3+.3)*devicePixelRatio,
+      a:Math.random()*.5+.15, s:Math.random()*.9+.15
+    }));
+  }
+  resize(); addEventListener('resize',resize);
+  const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function tick(t){
+    ctx.clearRect(0,0,cv.width,cv.height);
+    for(const st of stars){
+      const tw=reduce?1:(.6+.4*Math.sin(t/900*st.s+st.x));
+      ctx.globalAlpha=st.a*tw;
+      ctx.fillStyle='#cfe0ff';
+      ctx.beginPath();ctx.arc(st.x,st.y,st.r,0,7);ctx.fill();
+    }
+    if(!reduce) requestAnimationFrame(tick);
+  }
+  requestAnimationFrame(tick);
+
+  // reveal on scroll
+  const io=new IntersectionObserver(es=>es.forEach(e=>{
+    if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}
+  }),{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
