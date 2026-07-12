@@ -3,7 +3,7 @@
 Landing page ufficiale di **Keep The Right**, il quiz di cultura generale con
 sfide online 1 vs 1 ("Dimostra che lo sai!").
 
-🌐 **Live**: https://vage88sg1.github.io/keep-the-right-site/
+🌐 **Live**: https://ktrquiz.it/ (alias: https://vage88sg1.github.io/keep-the-right-site/)
 
 - Statico, zero build: `index.html` + `assets/`
 - Hosting: GitHub Pages (branch `main`, root)
