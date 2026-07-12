@@ -7,7 +7,7 @@ sfide online 1 vs 1 ("Dimostra che lo sai!").
 
 - Statico, zero build: `index.html` + `assets/`
 - Hosting: GitHub Pages (branch `main`, root)
-- Trailer: https://youtu.be/YPbTId7j_9s
+- Trailer: https://youtu.be/rC1Cqi74onw
 - Privacy policy del gioco: https://keep-the-right.web.app/privacy
 
 ## Sviluppo locale
