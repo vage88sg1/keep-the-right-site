@@ -1,0 +1,18 @@
+# Keep The Right (KTR)
+
+> Keep The Right è un quiz di cultura generale per Android ("Dimostra che lo
+> sai!"): in ogni round confronti due carte e scegli quella col valore più alto
+> (popolazione, incassi, velocità, titoli...) prima che scada il tempo.
+> Include l'Arena, duelli online asincroni 1 vs 1 con classifica mensile a
+> corsa di punti, e l'Allenamento offline (Specialista: 3 round a tema;
+> Saputello: 6 round a sorpresa).
+
+- Piattaforma: Android (Google Play, gratis, package com.vagesg1.ktr)
+- Store: https://play.google.com/store/apps/details?id=com.vagesg1.ktr
+- Lingue: italiano e inglese
+- Contenuti: 6 categorie (Geografia, Storia, Scienze e Natura, Arte e
+  Letteratura, Divertimento, Sport e Tempo Libero), oltre 2.000 elementi da
+  confrontare, round sempre diversi (mai a memoria)
+- Trailer: https://youtu.be/rC1Cqi74onw
+- Privacy: https://keep-the-right.web.app/privacy
+- Sviluppatore: Riccardo Vagelli (contatto: vage88.sg1@gmail.com)
