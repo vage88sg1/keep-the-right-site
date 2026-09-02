@@ -1,5 +1,5 @@
 {
- "last": "2026-08-31",
+ "last": "2026-09-02",
  "batch-01": [
   "clip_01_divertimento.mp4"
  ],
@@ -34,6 +34,7 @@
   "clip_02_divertimento.mp4"
  ],
  "batch-08": [
-  "clip_00_round.mp4"
+  "clip_00_round.mp4",
+  "clip_01_storia.mp4"
  ]
 }
